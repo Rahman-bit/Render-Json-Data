@@ -1,0 +1,92 @@
+<htmml>
+<body
+ <div class="card_items">
+        <div class="row product_data"></div>
+        <div class="row">
+            <div class="col s12 m12 l12 parameter"></div>
+            <div class="col s12 m12 l12">
+                <ul class="collapsible popout accordion accordion_menu_items"></ul> 
+            </div>
+            <div class="col s12 m12 l12 emptyParameter"></div>
+        </div>
+    </div>
+    
+<script>
+var cardItemFour = [{
+            "header" : {
+                        "img" : "./img/page-04.webp",
+                        "product_name" : "Possible Advanced Thyroid Profile - ",
+                        "mrp_price" : "6749",
+                        "final_price" : "3999",
+                        "offer" : "40",
+                        "product_subtitle" : "Possible Thyroid Profile provides a comprehensive group of tests that are required to diagnose thyroid disorders. Along with the advanced full-body tests package, this bundle consists of the following thyroid detection tests: Total Triiodothyronine (T3), Total Thyroxine (T4), Thyroid-Stimulating Hormone (TSH), Antithyroid Microsomal Antibodies (AMA), Antithyroglobulin (ATG)",
+                        "parameters" : ""
+                        },
+            "params" : {
+                     "IRON DEFICIENCY [5]" : ['% TRANSFERRIN SATURATION','FERRITIN','IRON','TOTAL IRON BINDING CAPACITY(TIBC)','UNSAT.IRON-BINDING CAPACITY(UIBC)'],
+                    "LIVER [12]" : ['SERUM ALB/GLOBULIN RATIO', 'ALKALINE PHOSPHATASE','BILIRUBIN -DIRECT','BILIRUBIN (INDIRECT)','BILIRUBIN - TOTAL','GAMMA GLUTAMYL TRANSFERASE(GGT)','SGOT / SGPT RATIO','PROTEIN - TOTAL','ALBUMIN - SERUM','SERUM GLOBULIN','ASPARTATE AMINOTRANSFERASE (SGOT )','ALANINE TRANSAMINASE(SGPT)'],
+                    "COMPLETE HEMOGRAM [24]" : ['BASOPHILS - ABSOLUTE COUNT','EOSINOPHILS - ABSOLUTE COUNT','LYMPHOCYTES - ABSOLUTE COUNT','MONOCYTES - ABSOLUTE COUNT','NEUTROPHILS - ABSOLUTE COUNT','BASOPHILS','EOSINOPHILS','HEMOGLOBIN','IMMATURE GRANULOCYTES(IG)','IMMATURE GRANULOCYTE PERCENTAGE(IG%)','TOTAL LEUCOCYTES COUNT(WBC)','LYMPHOCYTE PERCENTAGE','MEAN CORPUSCULAR HEMOGLOBIN(MCH)','MEAN CORP.HEMO.CONC(MCHC)','MEAN CORPUSCULAR VOLUME(MCV)','MONOCYTES','NEUTROPHILS','NUCLEATED RED BLOOD CELLS','NUCLEATED RED BLOOD CELLS %','HEMATOCRIT(PCV)','PLATELET COUNT','TOTAL RBC','RED CELL DISTRIBUTION WIDTH(RDW-CV)','RED CELL DISTRIBUTION WIDTH - SD(RDW-SD)'],
+                    "DIABETES [7]" : ['AVERAGE BLOOD GLUCOSE(ABG)','BLOOD KETONE(D3HB)','FASTING BLOOD SUGAR(GLUCOSE)','FRUCTOSAMINE','HbA1c','INSULIN - FASTING','URINARY MICROALBUMIN'],
+                    "PANCREATIC [2]" : ['AMYLASE','LIPASE'],
+                    "ARTHRITIS [2]" : ['ANTI CCP(ACCP)','ANTI NUCLEAR ANTIBODIES(ANA)'],
+                    "CARDIAC RISK MARKERS [7]" : ['APO B / APO A1 RATIO (APO B/A1)','APOLIPOPROTEIN - A1 (APO-A1)','APOLIPOPROTEIN - B(APO-B)','HOMOCYSTEINE','HIGH-SENSITIVITY C-REACTIVE PROTEIN(HS-CRP)','Lipoprotein (a) [Lp(a)]','LP-PLA2'],
+                    "RENAL [10]" : ['BUN / Sr.CREATININE RATIO','BLOOD UREA NITROGEN(BUN)','CALCIUM','CYSTATIN C','CREATININE - SERUM','URI. ALBUMIN/CREATININE RATIO (UA/C)','CREATININE - URINE','UREA / SR.CREATININE RATIO','UREA(CALCULATED)','URIC ACID'],
+                    "TOXIC ELEMENTS [22]" : ['SILVER','ALUMINIUM','ARSENIC','BARIUM','BERYLLIUM','BISMUTH','CADMIUM','COBALT','CHROMIUM','CAESIUM','MERCURY','MANGANESE','MOLYBDENUM','NICKEL','LEAD','ANTIMONY','SELENIUM','TIN','STRONTIUM','THALLIUM','URANIUM','VANADIUM'],
+                    "ELECTROLYTES [2]" : ['CHLORIDE','SODIUM'],
+                    "LIPID [10]" : ['TOTAL CHOLESTEROL','HDL CHOLESTEROL - DIRECT','HDL / LDL RATIO','LDL CHOLESTEROL - DIRECT','LDL / HDL RATIO','NON-HDL CHOLESTEROL','TC/ HDL CHOLESTEROL RATIO','TRIG / HDL RATIO','TRIGLYCERIDES','VLDL CHOLESTEROL'],
+                    "METABOLIC [1]" : ['MAGNESIUM'],
+                    "ELEMENTS [2]" : ['SERUM COPPER','SERUM ZINC'],
+                    "URINOGRAM [10]" : ['SPECIFIC GRAVITY','URINARY BILIRUBIN','URINE BLOOD','UROBILINOGEN','URINARY GLUCOSE','URINE KETONE','URINARY LEUKOCYTES(PUS CELLS)','NITRITE','PH','URINARY PROTEIN'],
+                    "THYROID [3]" : ['TOTAL TRIIODOTHYRONINE(T3)','TOTAL THYROXINE(T4)','THYROID-STIMULATING HORMONE(TSH)'],
+                    "HORMONE [1]" : ['TESTOSTERONE'],
+                    "VITAMIN [12]" : ['VITAMIN A','VITAMIN B-12','VITAMIN B1/THIAMIN','VITAMIN B2/RIBOFLAVIN','VITAMIN B3/NICOTINIC ACID','VITAMIN B5/PANTOTHENIC','VITAMIN B6/PYRIDOXAL - 5 - PHOSPHATE','VITAMIN B7/BIOTIN','VITAMIN B9/FOLIC ACID','25-OH VITAMIN D(TOTAL)','VITAMIN E','VITAMIN K'],
+                    "ANTITHYROID MICROSOMAL ANTIBODIES(AMA)" : '',
+                    "ANTITHYROGLOBULIN(ATG)" : ''
+                    }
+         }]
+          function displayCardItems(data){
+        data.map((item)=>{
+            var product_details = item.header;
+            var product_params = item.params;
+             $(".parameter").append(`<h5>${product_details.parameters}</h5>`);
+            var header_data = `<div class="col s12 m6 l6">
+                                    <img class="responsive-img centerItems" src='${product_details.img}'>
+                                </div>
+                                <div class="col s12 m6 l6">
+                                    <p class="item_price">${product_details.product_name}</p>
+                                    <div class="item_price">
+                                        MRP<span class="strike_price"> ₹${product_details.mrp_price}</span>,<span class="finalPrice">Price offered ₹${product_details.final_price}</span><span class="discount_offer">${product_details.offer}% Off</span>
+                                    </div>
+                                    <p class='subTitle'>${product_details.product_subtitle}</p> 
+                                </div>`
+                   $(".product_data").append(header_data);   
+
+                let accordionHTML = '';
+                for (let category in product_params) {
+                    let headerHTML = `<div class="collapsible-header"><span style="font-size: 20px; font-weight: 400">${category}</span><i class="fa fa-chevron-down" style="margin: auto 0px auto auto;"></i></div>`;
+                    let itemsHTML = '<div class="collapsible-body hoverable white row"><div class="col s12 padding-0">';
+                    
+                    if(product_params[category] !==''){
+                        product_params[category].forEach(item => {
+                                        itemsHTML += `<p>${item}</p>`;
+                                    });
+                    }else{
+                        $('.emptyParameter').append(`<p class="emptyValue">${category}</p>`);
+                    }          
+
+                    itemsHTML += '</div></div>';
+                    
+                   if(product_params[category] !== ''){
+                     accordionHTML += `<li style="margin-bottom: 20px!important;">${headerHTML}${itemsHTML}</li>`;
+                   }else{
+                     accordionHTML += ``;
+                   }
+                   // accordionHTML += `<li style="margin-bottom: 20px!important;">${headerHTML}${itemsHTML}</li>`;
+                }
+                $(".accordion_menu_items").append(accordionHTML);
+            })
+
+    }
+</script>
+</body>
+</html>
