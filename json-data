@@ -1,6 +1,109 @@
-<htmml>
-<body
- <div class="card_items">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src='https://cdn.jsdelivr.net/jquery.leanmodal/1.1/jquery.leanmodal.min.js'></script>
+      <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" integrity="sha384-3AB7yXWz4OeoZcPbieVW64vVXEwADiYyAEhwilzWsLw+9FgqpyjjStpPnpBO8o8S" crossorigin="anonymous">  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+    <style>
+        *{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+     }   
+    header {
+        display: flex;
+        justify-content: center;
+        z-index: 11;
+        position: relative;
+        padding: 10px 0 10px 0;
+        box-shadow: 0px 0px 10px 1px rgb(0 0 0 / 20%);
+    }
+    .card_items{
+        max-width: 95%;
+        margin: 30px auto 130px;
+    }
+    .centerItems {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+    .strike_price{
+        text-decoration-line: line-through; 
+        text-decoration-color: red; 
+        padding: 0px 5px;
+    }
+    .item_price {
+        font-size: 20px;
+        font-weight: 500;
+        padding: 10px 0px;
+    }
+    .item_price .finalPrice{
+        padding: 0px 10px;
+    }
+    .discount_offer{
+        color: red;
+    }
+    #bookNowBtn{  
+        position: fixed;
+        cursor: pointer;
+        left: auto;
+        bottom: 10px;
+        top: auto;
+        text-align: center;
+        /*width:100%;*/
+        left: 50%;
+        transform: translate(-50%, 0);
+        z-index:99999;
+    }
+    .add_to_cart_btn{
+        width: 100%;
+        border-radius: 25px;
+        color: #FFFF;
+        font-size: 20px;
+        font-weight: 600;
+        padding: 9px 27px;
+        background-color: #ff0000;
+    }
+    .accordion li.active .fa-chevron-down {
+       transform: rotate(180deg);
+    }
+    .header_text{
+        font-size: 20px;
+        font-weight: 400;
+    }
+    .collapsible.popout>li {
+        margin: 0px;
+    }
+    .collapsible-body {
+        padding: 1rem;
+    }
+    .emptyValue{
+        box-shadow: 0 6px 18px 0 rgb(0 0 0 / 16%);
+        padding: 14px;
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+    </style>
+</head>
+<body>
+    <div class="card_items">
         <div class="row product_data"></div>
         <div class="row">
             <div class="col s12 m12 l12 parameter"></div>
@@ -10,42 +113,40 @@
             <div class="col s12 m12 l12 emptyParameter"></div>
         </div>
     </div>
-    
-<script>
-var cardItem = [{
+
+   <script>
+    $(document).ready(function(){
+        $('.collapsible').collapsible();
+    })
+ var cardItem = [{
             "header" : {
-                        "img" : "./img/page-04.webp",
-                        "product_name" : "Possible Advanced Thyroid Profile - ",
-                        "mrp_price" : "6749",
-                        "final_price" : "3999",
-                        "offer" : "40",
-                        "product_subtitle" : "Possible Thyroid Profile provides a comprehensive group of tests that are required to diagnose thyroid disorders. Along with the advanced full-body tests package, this bundle consists of the following thyroid detection tests: Total Triiodothyronine (T3), Total Thyroxine (T4), Thyroid-Stimulating Hormone (TSH), Antithyroid Microsomal Antibodies (AMA), Antithyroglobulin (ATG)",
-                        "parameters" : ""
+                        "img" : "./img/01.webp",
+                        "product_name" : "Comprehensive bundle",
+                        "mrp_price" : "3499",
+                        "final_price" : "1999",
+                        "offer" : "43",
+                        "product_subtitle" : "Minerals and more. ",
+                        "parameters" : "Headiings: "
                         },
             "params" : {
-                     "IRON DEFICIENCY [5]" : ['% TRANSFERRIN SATURATION','FERRITIN','IRON','TOTAL IRON BINDING CAPACITY(TIBC)','UNSAT.IRON-BINDING CAPACITY(UIBC)'],
-                    "LIVER [12]" : ['SERUM ALB/GLOBULIN RATIO', 'ALKALINE PHOSPHATASE','BILIRUBIN -DIRECT','BILIRUBIN (INDIRECT)','BILIRUBIN - TOTAL','GAMMA GLUTAMYL TRANSFERASE(GGT)','SGOT / SGPT RATIO','PROTEIN - TOTAL','ALBUMIN - SERUM','SERUM GLOBULIN','ASPARTATE AMINOTRANSFERASE (SGOT )','ALANINE TRANSAMINASE(SGPT)'],
+                    "IRON DEFICIENCY [4]" : ['% TRANSFERRIN SATURATION', 'IRON','TOTAL IRON BINDING CAPACITY (TIBC)','UNSAT.IRON-BINDING CAPACITY(UIBC)'],
+                    "LIVER [12]" : ['SERUM ALB/GLOBULIN RATIO', 'ALKALINE PHOSPHATASE','BILIRUBIN -DIRECT','BILIRUBIN(INDIRECT)','BILIRUBIN - TOTAL','GAMMA GLUTAMYL TRANSFERASE (GGT)','SGOT / SGPT RATIO','PROTEIN - TOTAL','ALBUMIN - SERUM','SERUM GLOBULIN','ASPARTATE AMINOTRANSFERASE(SGOT )','ALANINE TRANSAMINASE (SGPT)'],
                     "COMPLETE HEMOGRAM [24]" : ['BASOPHILS - ABSOLUTE COUNT','EOSINOPHILS - ABSOLUTE COUNT','LYMPHOCYTES - ABSOLUTE COUNT','MONOCYTES - ABSOLUTE COUNT','NEUTROPHILS - ABSOLUTE COUNT','BASOPHILS','EOSINOPHILS','HEMOGLOBIN','IMMATURE GRANULOCYTES(IG)','IMMATURE GRANULOCYTE PERCENTAGE(IG%)','TOTAL LEUCOCYTES COUNT(WBC)','LYMPHOCYTE PERCENTAGE','MEAN CORPUSCULAR HEMOGLOBIN(MCH)','MEAN CORP.HEMO.CONC(MCHC)','MEAN CORPUSCULAR VOLUME(MCV)','MONOCYTES','NEUTROPHILS','NUCLEATED RED BLOOD CELLS','NUCLEATED RED BLOOD CELLS %','HEMATOCRIT(PCV)','PLATELET COUNT','TOTAL RBC','RED CELL DISTRIBUTION WIDTH(RDW-CV)','RED CELL DISTRIBUTION WIDTH - SD(RDW-SD)'],
-                    "DIABETES [7]" : ['AVERAGE BLOOD GLUCOSE(ABG)','BLOOD KETONE(D3HB)','FASTING BLOOD SUGAR(GLUCOSE)','FRUCTOSAMINE','HbA1c','INSULIN - FASTING','URINARY MICROALBUMIN'],
+                    "DIABETES [6]" : ['AVERAGE BLOOD GLUCOSE(ABG)','BLOOD KETONE(D3HB)','FRUCTOSAMINE','INSULIN - FASTING','HbA1c','FASTING BLOOD SUGAR(GLUCOSE)'],
                     "PANCREATIC [2]" : ['AMYLASE','LIPASE'],
-                    "ARTHRITIS [2]" : ['ANTI CCP(ACCP)','ANTI NUCLEAR ANTIBODIES(ANA)'],
-                    "CARDIAC RISK MARKERS [7]" : ['APO B / APO A1 RATIO (APO B/A1)','APOLIPOPROTEIN - A1 (APO-A1)','APOLIPOPROTEIN - B(APO-B)','HOMOCYSTEINE','HIGH-SENSITIVITY C-REACTIVE PROTEIN(HS-CRP)','Lipoprotein (a) [Lp(a)]','LP-PLA2'],
-                    "RENAL [10]" : ['BUN / Sr.CREATININE RATIO','BLOOD UREA NITROGEN(BUN)','CALCIUM','CYSTATIN C','CREATININE - SERUM','URI. ALBUMIN/CREATININE RATIO (UA/C)','CREATININE - URINE','UREA / SR.CREATININE RATIO','UREA(CALCULATED)','URIC ACID'],
-                    "TOXIC ELEMENTS [22]" : ['SILVER','ALUMINIUM','ARSENIC','BARIUM','BERYLLIUM','BISMUTH','CADMIUM','COBALT','CHROMIUM','CAESIUM','MERCURY','MANGANESE','MOLYBDENUM','NICKEL','LEAD','ANTIMONY','SELENIUM','TIN','STRONTIUM','THALLIUM','URANIUM','VANADIUM'],
+                    "CARDIAC RISK MARKERS [6]" : ['APO B / APO A1 RATIO(APO B/A1)','APOLIPOPROTEIN - A1(APO-A1)','APOLIPOPROTEIN - B(APO-B)','HOMOCYSTEINE','HIGH-SENSITIVITY C-REACTIVE PROTEIN(HS-CRP)','Lipoprotein(a)[Lp(a)]'],
+                    "RENAL [7]" : ['BUN / Sr.CREATININE RATIO','BLOOD UREA NITROGEN(BUN)','CALCIUM','CREATININE - SERUM','UREA / SR.CREATININE RATIO','UREA(CALCULATED)','URIC ACID'],
                     "ELECTROLYTES [2]" : ['CHLORIDE','SODIUM'],
                     "LIPID [10]" : ['TOTAL CHOLESTEROL','HDL CHOLESTEROL - DIRECT','HDL / LDL RATIO','LDL CHOLESTEROL - DIRECT','LDL / HDL RATIO','NON-HDL CHOLESTEROL','TC/ HDL CHOLESTEROL RATIO','TRIG / HDL RATIO','TRIGLYCERIDES','VLDL CHOLESTEROL'],
-                    "METABOLIC [1]" : ['MAGNESIUM'],
                     "ELEMENTS [2]" : ['SERUM COPPER','SERUM ZINC'],
-                    "URINOGRAM [10]" : ['SPECIFIC GRAVITY','URINARY BILIRUBIN','URINE BLOOD','UROBILINOGEN','URINARY GLUCOSE','URINE KETONE','URINARY LEUKOCYTES(PUS CELLS)','NITRITE','PH','URINARY PROTEIN'],
                     "THYROID [3]" : ['TOTAL TRIIODOTHYRONINE(T3)','TOTAL THYROXINE(T4)','THYROID-STIMULATING HORMONE(TSH)'],
                     "HORMONE [1]" : ['TESTOSTERONE'],
-                    "VITAMIN [12]" : ['VITAMIN A','VITAMIN B-12','VITAMIN B1/THIAMIN','VITAMIN B2/RIBOFLAVIN','VITAMIN B3/NICOTINIC ACID','VITAMIN B5/PANTOTHENIC','VITAMIN B6/PYRIDOXAL - 5 - PHOSPHATE','VITAMIN B7/BIOTIN','VITAMIN B9/FOLIC ACID','25-OH VITAMIN D(TOTAL)','VITAMIN E','VITAMIN K'],
-                    "ANTITHYROID MICROSOMAL ANTIBODIES(AMA)" : '',
-                    "ANTITHYROGLOBULIN(ATG)" : ''
+                    "VITAMIN [2]" : ['VITAMIN B-12','25-OH VITAMIN D(TOTAL)'],
+                    "CORTISOL" : ''
                     }
          }]
-         displayCardItems(cardItem)
-          function displayCardItems(data){
+displayCardItems(cardItem)
+    function displayCardItems(data){
         data.map((item)=>{
             var product_details = item.header;
             var product_params = item.params;
@@ -87,7 +188,7 @@ var cardItem = [{
                 $(".accordion_menu_items").append(accordionHTML);
             })
 
-    }
-</script>
+    }    
+   </script>
 </body>
 </html>
