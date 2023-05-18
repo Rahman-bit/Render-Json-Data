@@ -12,7 +12,7 @@
     </div>
     
 <script>
-var cardItemFour = [{
+var cardItem = [{
             "header" : {
                         "img" : "./img/page-04.webp",
                         "product_name" : "Possible Advanced Thyroid Profile - ",
@@ -44,6 +44,7 @@ var cardItemFour = [{
                     "ANTITHYROGLOBULIN(ATG)" : ''
                     }
          }]
+         displayCardItems(cardItem)
           function displayCardItems(data){
         data.map((item)=>{
             var product_details = item.header;
